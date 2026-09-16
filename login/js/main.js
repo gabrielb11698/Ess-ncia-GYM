@@ -1,4 +1,3 @@
-// Mostrar/ocultar senha
 document.querySelectorAll('.botao-olho').forEach(function(botao){
 	botao.addEventListener('click', function(){
 		var input = botao.previousElementSibling;
@@ -12,7 +11,6 @@ document.querySelectorAll('.botao-olho').forEach(function(botao){
 	});
 });
 
-// Validação simples no envio
 var form = document.querySelector('.form-login');
 form.addEventListener('submit', function(e){
 	e.preventDefault();
@@ -38,7 +36,6 @@ form.addEventListener('submit', function(e){
 	}
 
 	if(valido){
-		// Aqui entraria a chamada real de autenticação (fetch para seu backend)
 		alert('Login validado! Conecte esta função ao seu backend.');
 	}
 });
