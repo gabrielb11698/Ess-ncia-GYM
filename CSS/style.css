@@ -1,1 +1,276 @@
+/* Corpo do site */
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    background-color:#0a0a09;
+    background-size: cover;
+    background-position:center ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #e9dfc7;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Menu */
+
+header{
+    background:  #141310;
+    padding: 15px;
+}
+
+#loja{
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+#menu-toggle{
+    display:none;
+}
+
+.menu-icon{
+    display:block;
+    text-align:center;
+    font-size:30px;
+    cursor:pointer;
+    color:white;
+}
+
+nav{
+    display:none;
+}
+
+#menu-toggle:checked + .menu-icon + nav{
+    display:block;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding:0;
+}
+
+nav a{
+    display:block;
+    padding:12px;
+    text-decoration:none;
+    color:#d9cbaa;
+    text-align:center;
+    border-radius:5px;
+}
+
+nav a:hover{
+    color: #d9cbaa;
+}
+
+#loja{
+    color: #d9cbaa;
+    font-weight: bold;
+    font-size:x-large;
+    margin-right: auto;
+    font-family:'Press Start 2P', Courier, monospace;
+}
+
+#login{
+    background-color: dimgray;
+    margin-left: auto;
+    border-radius: 5px;
+}
+
+#login:hover{
+    color: black;
+    background-color: rgb(61, 61, 61);
+}
+
+.bi-cart2 {
+    font-size: 24px;
+    color: #d9cbaa;
+}
+
+.bi-cart2:hover {
+    color:#8f6608
+}
+
+/* Página de Produtos */
+
+main h1{
+    text-align: center;
+    margin: 30px 0;
+}
+
+.galeria-produtos{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+.card-produto{
+    width: 260px;
+    background-color: #4a3f2a;
+    border: 2px solid #9c8558;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    transition: transform .3s;
+    box-shadow: 0 0 12px rgba(0,0,0,.5);
+}
+
+.card-produto:hover{
+    transform: scale(1.05);
+}
+
+.card-produto img{
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-produto h2{
+    margin: 12px 0;
+    color: white;
+}
+
+.card-produto p{
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.card-produto h3{
+    color: #00ff99;
+    margin-bottom: 15px;
+}
+
+.card-produto a{
+    display: inline-block;
+    background: #e9dfc7;
+    color: #d9cbaa;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.card-produto a:hover{
+    background: darkmagenta;
+}
+
+/* Página de detalhes */
+
+.detalhes{
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(25,25,45,.9);
+    border-radius: 10px;
+}
+
+.detalhes h1{
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.detalhes h2{
+    color:#00ff99;
+    margin-bottom:20px;
+}
+
+.detalhes p{
+    margin-bottom:20px;
+}
+
+.detalhes ul{
+    margin:20px;
+}
+
+.botoes-produto{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.botao{
+    display: inline-block;
+    padding: 12px 20px;
+    background: darkslateblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.botao:hover{
+    background: darkmagenta;
+}
+
+
+.botao:hover{
+    background:darkmagenta;
+}
+
+/* Desig responsivo */
+
+@media (min-width:768px){
+
+    .menu-icon{
+        display:none;
+    }
+
+    nav{
+        display:block;
+    }
+
+    nav ul{
+        flex-direction:row;
+        justify-content:flex-start;
+    }
+
+    #login{
+        margin-left: 0;
+    }
+
+    nav ul li:nth-child(3){
+        margin-left: auto;
+    }
+
+    .galeria-produtos{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+
+
+}
+
+@media (min-width:1024px){
+
+.galeria-produtos{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+}
+
+.detalhes{
+    max-width:900px;
+}
+
+.contato{
+    max-width:700px;
+}
+
+.portfolio{
+    max-width:800px;
+}
+
+}
