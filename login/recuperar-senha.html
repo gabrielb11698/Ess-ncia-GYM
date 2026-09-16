@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title>Essência Gym | Recuperar senha</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+
+</head>
+<body>
+
+	<main class="login-wrap">
+
+		<!-- Painel visual com a marca -->
+		<section class="painel-marca">
+			<img src="assets/logo-essencia-gym.png" alt="Logo Essência Gym">
+			<div class="linha-ouro"></div>
+			<p class="frase">DISCIPLINA &nbsp;•&nbsp; CONSTÂNCIA &nbsp;•&nbsp; RESULTADOS</p>
+		</section>
+
+		<!-- Painel do formulário -->
+		<section class="painel-form">
+
+			<!-- Etapa 1: pedir o e-mail -->
+			<form class="form-recuperar" id="formEtapa1" novalidate>
+				<h1 class="titulo-form">Esqueceu a senha?</h1>
+				<p class="subtitulo-form">Informe o e-mail da sua conta. Vamos enviar um link para você criar uma nova senha.</p>
+
+				<div class="campo" data-tipo="email">
+					<label for="email">E-mail</label>
+					<input id="email" type="email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required>
+					<span class="mensagem-erro">Informe um e-mail válido, ex: nome@exemplo.com</span>
+				</div>
+
+				<button type="submit" class="botao-entrar">Enviar link de recuperação</button>
+
+				<p class="rodape-form">
+					Lembrou a senha?
+					<a href="index.html">Voltar para o login</a>
+				</p>
+			</form>
+
+			<!-- Etapa 2: confirmação de envio -->
+			<div class="confirmacao" id="etapaConfirmacao" hidden>
+				<h1 class="titulo-form">Verifique seu e-mail</h1>
+				<p class="subtitulo-form">
+					Se existir uma conta cadastrada com o e-mail
+					<strong id="emailConfirmado" class="texto-destaque"></strong>,
+					enviamos um link para redefinir sua senha. Confira também a caixa de spam.
+				</p>
+
+				<button type="button" class="botao-entrar botao-secundario" id="botaoReenviar">Reenviar e-mail</button>
+
+				<p class="rodape-form">
+					<a href="index.html">Voltar para o login</a>
+				</p>
+			</div>
+
+		</section>
+
+	</main>
+
+
+	<script src="js/recuperar-senha.js"></script>
+</body>
+</html>
