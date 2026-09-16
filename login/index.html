@@ -1,89 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title>Essência Gym | Entrar</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
 
-(function ($) {
-    "use strict";
+	<main class="login-wrap">
 
+		<!-- Painel visual com a marca -->
+		<section class="painel-marca">
+			<img src="assets/logo-essencia-gym.png" alt="Logo Essência Gym">
+			<div class="linha-ouro"></div>
+			<p class="frase">DISCIPLINA &nbsp;•&nbsp; CONSTÂNCIA &nbsp;•&nbsp; RESULTADOS</p>
+		</section>
 
-    /*==================================================================
-    [ Focus input ]*/
-    $('.input100').each(function(){
-        $(this).on('blur', function(){
-            if($(this).val().trim() != "") {
-                $(this).addClass('has-val');
-            }
-            else {
-                $(this).removeClass('has-val');
-            }
-        })    
-    })
-  
-  
-    /*==================================================================
-    [ Validate ]*/
-    var input = $('.validate-input .input100');
+		<!-- Painel do formulário -->
+		<section class="painel-form">
+			<form class="form-login" novalidate>
+				<h1 class="titulo-form">Bem-vindo de volta</h1>
+				<p class="subtitulo-form">Entre com sua conta para continuar seus treinos.</p>
 
-    $('.validate-form').on('submit',function(){
-        var check = true;
+				<div class="campo" data-tipo="email">
+					<label for="email">E-mail</label>
+					<input id="email" type="email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required>
+					<span class="mensagem-erro">Informe um e-mail válido, ex: nome@exemplo.com</span>
+				</div>
 
-        for(var i=0; i<input.length; i++) {
-            if(validate(input[i]) == false){
-                showValidate(input[i]);
-                check=false;
-            }
-        }
+				<div class="campo" data-tipo="senha">
+					<label for="senha">Senha</label>
+					<input id="senha" type="password" name="senha" placeholder="Digite sua senha" autocomplete="current-password" required>
+					<button type="button" class="icone botao-olho" aria-label="Mostrar senha">Mostrar</button>
+					<span class="mensagem-erro">Digite sua senha para continuar</span>
+				</div>
 
-        return check;
-    });
+				<div class="linha-opcoes">
+					<label class="lembrar">
+						<input type="checkbox" name="lembrar">
+						Lembrar de mim
+					</label>
+					<a class="link-recuperar" href="recuperar-senha.html">Esqueceu a senha?</a>
+				</div>
 
+				<button type="submit" class="botao-entrar">Entrar</button>
 
-    $('.validate-form .input100').each(function(){
-        $(this).focus(function(){
-           hideValidate(this);
-        });
-    });
+				<p class="rodape-form">
+					Ainda não tem uma conta?
+					<a href="cadastro.html">Cadastre-se</a>
+				</p>
+			</form>
+		</section>
 
-    function validate (input) {
-        if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
-            if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
-                return false;
-            }
-        }
-        else {
-            if($(input).val().trim() == ''){
-                return false;
-            }
-        }
-    }
+	</main>
 
-    function showValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).addClass('alert-validate');
-    }
-
-    function hideValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).removeClass('alert-validate');
-    }
-    
-    /*==================================================================
-    [ Show pass ]*/
-    var showPass = 0;
-    $('.btn-show-pass').on('click', function(){
-        if(showPass == 0) {
-            $(this).next('input').attr('type','text');
-            $(this).find('i').removeClass('zmdi-eye');
-            $(this).find('i').addClass('zmdi-eye-off');
-            showPass = 1;
-        }
-        else {
-            $(this).next('input').attr('type','password');
-            $(this).find('i').addClass('zmdi-eye');
-            $(this).find('i').removeClass('zmdi-eye-off');
-            showPass = 0;
-        }
-        
-    });
-
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+</body>
+</html>
 
 })(jQuery);
